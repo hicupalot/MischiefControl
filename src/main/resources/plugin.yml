@@ -1,0 +1,15 @@
+name: MischiefControl
+version: ${project.version}
+main: com.hicupalot.mischiefcontrol.MischiefControl
+api-version: 1.17
+authors: [ hicupalot ]
+description: Private plugin for MischiefSMP
+
+commands:
+  mischiefcontrol:
+    description: "Plugin information"
+
+permissions:
+  mischief.admin:
+    description: Admin Perm
+    default: op
