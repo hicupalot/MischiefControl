@@ -1,6 +1,7 @@
 package com.hicupalot.mischiefcontrol;
 
 import Commands.MischiefControlInfo;
+import Inhibitors.LagTester;
 import Inhibitors.LaggStopper;
 import Inhibitors.Piston;
 import Inhibitors.TNTOff;
@@ -14,6 +15,7 @@ public final class MischiefControl extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new TNTOff(), this);
         getServer().getPluginManager().registerEvents(new Piston(), this);
         getServer().getPluginManager().registerEvents(new LaggStopper(),this);
+        getServer().getPluginManager().registerEvents(new LagTester(),this);
         // Plugin startup logic
 
     }
