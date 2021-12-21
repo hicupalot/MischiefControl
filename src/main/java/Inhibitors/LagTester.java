@@ -8,6 +8,7 @@ import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.server.ServerEvent;
 
 import java.util.EventListener;
@@ -16,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LagTester implements EventListener, Listener {
     @EventHandler
-    public void TPS(ServerEvent e) throws InterruptedException {
+    public void TPS(PlayerDropItemEvent e) throws InterruptedException {
         if (Bukkit.getServer().getTPS().length < 10) {
             for (Player players : Bukkit.getOnlinePlayers()) {
                 players.sendMessage(ChatColor.BOLD+"Due to Server Lag, Dropped Items will be deleted in 15 seconds!");
