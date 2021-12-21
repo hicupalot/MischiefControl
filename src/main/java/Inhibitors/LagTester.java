@@ -10,7 +10,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.ServerEvent;
 
-import javax.management.timer.Timer;
 import java.util.EventListener;
 import java.util.List;
 import java.util.concurrent.TimeUnit;

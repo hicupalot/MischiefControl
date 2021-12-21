@@ -13,7 +13,7 @@ public class MischiefControlInfo implements CommandExecutor {
             sender.sendMessage(ChatColor.GOLD + "Author: " + "hicupalot");
             sender.sendMessage(ChatColor.GOLD + "Version: " + "1.1.2");
         }
-        return false;
+        return true;
     }
 }
 
