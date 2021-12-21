@@ -1,2 +1,2 @@
 # MischiefControl
-Private Plugin for MischiefSMP
+Private Plugin for MischiefSMP!
