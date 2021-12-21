@@ -1,6 +1,7 @@
 package Inhibitors;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
@@ -19,7 +20,7 @@ public class LagTester implements EventListener, Listener {
     public void TPS(ServerEvent e) throws InterruptedException {
         if (Bukkit.getServer().getTPS().length < 10) {
             for (Player players : Bukkit.getOnlinePlayers()) {
-                players.sendMessage("Due to Server Lag Items will be deleted in 15 seconds!");
+                players.sendMessage(ChatColor.BOLD+"Due to Server Lag, Dropped Items will be deleted in 15 seconds!");
                 TimeUnit.SECONDS.sleep(15); //TimeFrame to Wait
             //----------------------------------------------------------//
                 World world = Bukkit.getServer().getWorld("world"); //Change this if world name changes
@@ -28,6 +29,7 @@ public class LagTester implements EventListener, Listener {
                 for (Entity items : entList) {
                     if (items instanceof Item) {
                         items.remove();
+                         players.sendMessage(ChatColor.BOLD+"All Dropped Items were deleted!");
                     }
                 }
             }
