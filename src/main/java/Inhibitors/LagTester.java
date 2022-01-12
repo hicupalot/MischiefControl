@@ -8,6 +8,8 @@ import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockPhysicsEvent;
+import org.bukkit.event.block.BlockRedstoneEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.server.ServerEvent;
 
@@ -20,16 +22,16 @@ public class LagTester implements EventListener, Listener {
     public void TPS(PlayerDropItemEvent e) throws InterruptedException {
         if (Bukkit.getServer().getTPS().length < 10) {
             for (Player players : Bukkit.getOnlinePlayers()) {
-                players.sendMessage(ChatColor.BOLD+"Due to Server Lag, Dropped Items will be deleted in 15 seconds!");
+                players.sendMessage(ChatColor.BOLD + "Due to Server Lag, Dropped Items will be deleted in 15 seconds!");
                 TimeUnit.SECONDS.sleep(15); //TimeFrame to Wait
-            //----------------------------------------------------------//
+                //----------------------------------------------------------//
                 World world = Bukkit.getServer().getWorld("world"); //Change this if world name changes
-                assert world!=null;
+                assert world != null;
                 List<Entity> entList = world.getEntities();
                 for (Entity items : entList) {
                     if (items instanceof Item) {
                         items.remove();
-                         players.sendMessage(ChatColor.BOLD+"All Dropped Items were deleted!");
+                        players.sendMessage(ChatColor.BOLD + "All Dropped Items were deleted!");
                     }
                 }
             }

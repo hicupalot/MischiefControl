@@ -15,21 +15,4 @@ public class TNTOff implements Listener {
             e.setCancelled(true);
         }
     }
-
-    @EventHandler
-    public void onInteract(PlayerInteractEvent e) { //This is to make sure players aren't confused
-        assert e.getClickedBlock().getType() != null; //I know this is always true but IntelliJ was shouting at me and we can't have that
-        if (e.getClickedBlock().getType() != Material.TNT) {
-            return;
-        }
-        if (e.getClickedBlock().getType().equals(Material.TNT)) {
-            if (e.getPlayer().getItemInUse() == null){ //This is a fallback
-                return;
-            }
-            if (e.getPlayer().getItemInUse().getType().equals(Material.FLINT_AND_STEEL)) {
-                e.getPlayer().sendMessage(ChatColor.YELLOW + "TNT is disabled on this server for lagg reasons");
-            }
-        }
-    }
 }
-

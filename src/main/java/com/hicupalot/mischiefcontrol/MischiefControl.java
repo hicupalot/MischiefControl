@@ -5,6 +5,7 @@ import Inhibitors.LagTester;
 import Inhibitors.LaggStopper;
 import Inhibitors.Piston;
 import Inhibitors.TNTOff;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MischiefControl extends JavaPlugin {
@@ -16,6 +17,7 @@ public final class MischiefControl extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Piston(), this);
         getServer().getPluginManager().registerEvents(new LaggStopper(),this);
         getServer().getPluginManager().registerEvents(new LagTester(),this);
+        System.out.println(ChatColor.LIGHT_PURPLE+"MischiefControl loaded successfully!");
         // Plugin startup logic
 
     }
